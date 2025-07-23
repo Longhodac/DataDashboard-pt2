@@ -1,4 +1,4 @@
-# Web Development Project 6 - *Long HoDac*
+# Web Development Project 6 - *Data Dashboard 2*
 
 Submitted by: **Long HoDac**
 
