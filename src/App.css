@@ -1,0 +1,442 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background: #f9fafb;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Header Styles */
+.header {
+  background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+  color: white;
+  padding: 2rem 0;
+  box-shadow: 0 10px 30px -5px rgba(217, 119, 6, 0.3);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.header-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.header-title h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.header-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* Stat Card Styles */
+.stat-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card.amber {
+  border-left-color: #d97706;
+}
+
+.stat-card.green {
+  border-left-color: #059669;
+}
+
+.stat-card.blue {
+  border-left-color: #2563eb;
+}
+
+.stat-card.purple {
+  border-left-color: #7c3aed;
+}
+
+.stat-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stat-card-info h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card-value {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.stat-card-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.stat-card-icon {
+  width: 3rem;
+  height: 3rem;
+  opacity: 0.7;
+}
+
+.stat-card-icon.amber {
+  color: #d97706;
+}
+
+.stat-card-icon.green {
+  color: #059669;
+}
+
+.stat-card-icon.blue {
+  color: #2563eb;
+}
+
+.stat-card-icon.purple {
+  color: #7c3aed;
+}
+
+/* Search and Filter Styles */
+.search-filters {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.search-filters-controls {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .search-filters-controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+.search-input-container {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.875rem 1rem 0.875rem 3rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+}
+
+.filter-container {
+  position: relative;
+}
+
+.filter-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  width: 1.25rem;
+  height: 1.25rem;
+  z-index: 1;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 0.875rem 1rem 0.875rem 3rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-select.no-icon {
+  padding-left: 1rem;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+}
+
+.results-count {
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* Brewery Card Styles */
+.brewery-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #f3f4f6;
+}
+
+.brewery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+.brewery-card-content {
+  padding: 2rem;
+}
+
+.brewery-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.brewery-card-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.brewery-card-location {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.brewery-type-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+  letter-spacing: 0.025em;
+}
+
+.brewery-type-badge.micro {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.brewery-type-badge.brewpub {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.brewery-type-badge.regional {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.brewery-type-badge.default {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.brewery-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.brewery-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.brewery-detail-icon {
+  color: #6b7280;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.brewery-detail span {
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.brewery-website-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.brewery-website-link:hover {
+  color: #1d4ed8;
+}
+
+.brewery-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brewery-btn {
+  background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brewery-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(217, 119, 6, 0.4);
+}
+
+.brewery-website-icon {
+  background: #f3f4f6;
+  color: #6b7280;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brewery-website-icon:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* Animation for loading spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    padding: 1.5rem;
+  }
+  
+  .header-title h1 {
+    font-size: 2.5rem;
+  }
+  
+  .header-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .header-title {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .header-title h1 {
+    font-size: 2rem;
+  }
+  
+  .header-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .brewery-card-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .brewery-actions {
+    flex-direction: column;
+  }
+}
